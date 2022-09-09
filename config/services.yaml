@@ -25,4 +25,6 @@ services:
 
     App\Controller\Hello:
         calls:
-            - [setContainer, ["@service_container"]]
+            - [setContainer, ["@Psr\Container\ContainerInterface"]]
+        tags:
+            - { name: 'container.service_subscriber' }
